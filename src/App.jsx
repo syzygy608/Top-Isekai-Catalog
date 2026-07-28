@@ -4,17 +4,19 @@ import './index.css';
 
 const FILTER_OPTIONS = {
   factions: ['真理 Truth', '才藝 Prowess', '熱情 Passion', '富饒 Wealth', '榮耀 Glory'],
-  tacticalRoles: ['集結', '攻城','駐防', '突擊', '減體', '通用', '主將', '主攻手', '守護者'],
+  positions: ['主將', '主攻手', '守護者'],
+  tacticalRoles: ['集結', '攻城','駐防', '突擊', '減體', '通用'],
   skillEffects: [
     '普攻傷害增加', '技能傷害增加', '對其他玩家傷害增加',
     '普攻傷害減少', '技能傷害減少', '提升行車速度',
-    '冒險者容量增加', '駐防建築/總部', '攻擊建築', '攻擊總部'
+    '單兵出擊冒險者容量', '集結車冒險者容量', '駐防建築/總部', '攻擊建築', '攻擊總部'
   ],
   tags: ['新手適合', '低課適合', '重課專屬', '祈願']
 };
 
 const FILTER_LABELS = {
   factions: '所屬陣營',
+  positions: '定位',
   tacticalRoles: '戰術場景',
   skillEffects: '技能效果',
   tags: '標籤'
@@ -70,6 +72,7 @@ const FilterGroup = React.memo(function FilterGroup({ groupKey, options, current
 export default function HeroDex() {
   const [filters, setFilters] = useState({
     factions: [],
+    positions: [],
     tacticalRoles: [],
     skillEffects: [],
     tags: []
@@ -87,10 +90,12 @@ export default function HeroDex() {
   }, []);
 
   const filteredHeroes = useMemo(() => {
-      const { factions, tacticalRoles, skillEffects, tags } = filters;
+      const { factions, positions, tacticalRoles, skillEffects, tags } = filters;
 
       const filtered = heroesData.filter(hero => {
         const matchFaction = factions.length === 0 || factions.includes(hero.faction);
+        const matchPosition = positions.length === 0 ||
+                  positions.some(pos => hero.tacticalRoles.includes(pos));
         const matchTactical = tacticalRoles.length === 0 ||
           tacticalRoles.some(role => hero.tacticalRoles.includes(role));
         const matchEffect = skillEffects.length === 0 ||
@@ -100,7 +105,7 @@ export default function HeroDex() {
         const matchTags = tags.length === 0 ||
           tags.some(tag => hero.tags.includes(tag));
 
-        return matchFaction && matchTactical && matchEffect && matchTags;
+        return matchFaction && matchTactical && matchEffect && matchTags && matchPosition;
       });
 
       return filtered.sort((a, b) => a.id.localeCompare(b.id));

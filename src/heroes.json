@@ -7,7 +7,7 @@
     "tacticalRoles": ["集結", "主將"],
     "skillEffects": [
       "每 10 秒釋放一次傷害係數為 1800% 的攻擊",
-      "冒險者容量增加 10%",
+      "集結車冒險者容量增加 10%",
       "對其他玩家傷害增加 30%"
     ],
     "tags": ["失落之城 S1", "S1 預熱", "失落之城 S2", "S2 電影大亨"],
@@ -19,11 +19,11 @@
     "name": "奧古斯汀 Augustine",
     "faction": "真理 Truth",
     "rarity": "SSR",
-    "tacticalRoles": ["集結", "守護者"],
+    "tacticalRoles": ["突擊", "守護者"],
     "skillEffects": [
       "每 10 秒釋放一次傷害係數為 1800% 的攻擊",
       "攻擊總部時，每秒造成係數 1.2% 的額外傷害",
-      "冒險者容量增加 10%"
+      "單兵出擊冒險者容量增加 10%"
     ],
     "tags": ["最強轉生者", "絕版"],
     "synergyPartners": [],
@@ -139,11 +139,11 @@
     "name": "阿克蒂斯 Arctis",
     "faction": "榮耀 Glory",
     "rarity": "SSR",
-    "tacticalRoles": ["集結", "主將"],
+    "tacticalRoles": ["突擊", "主將"],
     "skillEffects": [
       "每 10 秒釋放一次傷害係數為 1800% 的攻擊",
       "普攻傷害增加 50%",
-      "冒險者容量增加 10%"
+      "單兵出擊冒險者容量增加 10%"
     ],
     "tags": ["寒霜之地 S1", "S1 巨龍之寶"],
     "synergyPartners": [],
@@ -229,11 +229,11 @@
     "name": "菲伊 Faye",
     "faction": "才藝 Prowess",
     "rarity": "SSR",
-    "tacticalRoles": ["集結", "主攻手"],
+    "tacticalRoles": ["突擊", "主攻手"],
     "skillEffects": [
       "每 10 秒釋放一次傷害係數為 1800% 的攻擊",
       "技能傷害增加 20%",
-      "冒險者容量增加 10%"
+      "單兵出擊冒險者容量增加 10%"
     ],
     "tags": ["低課適合", "VIP 禮包"],
     "synergyPartners": [],
@@ -244,11 +244,11 @@
     "name": "塞納 Sena",
     "faction": "才藝 Prowess",
     "rarity": "SSR",
-    "tacticalRoles": ["集結", "主攻手"],
+    "tacticalRoles": ["突擊", "主攻手"],
     "skillEffects": [
       "每 10 秒釋放一次傷害係數為 1800% 的攻擊",
       "普攻傷害增加 50%",
-      "冒險者容量增加 10%"
+      "單兵出擊冒險者容量增加 10%"
     ],
     "tags": ["失落之城 S1", "S1 巨龍之寶"],
     "synergyPartners": [],
@@ -349,11 +349,11 @@
     "name": "維塔 Vita",
     "faction": "富饒 Wealth",
     "rarity": "SSR",
-    "tacticalRoles": ["集結", "主將"],
+    "tacticalRoles": ["突擊", "主將"],
     "skillEffects": [
       "每 10 秒釋放一次傷害係數為 1800% 的攻擊",
       "普攻傷害增加 50%",
-      "冒險者容量增加 10%"
+      "單兵出擊冒險者容量增加 10%"
     ],
     "tags": ["失落之城 S2", "S2 預熱"],
     "synergyPartners": [],
@@ -462,7 +462,7 @@
     "skillEffects": [
       "每 10 秒釋放一次傷害係數為 1800% 的攻擊",
       "普通傷害增加 50%",
-      "攻擊建築時，每秒造成係數 1.8% 的額外傷害, 冒險者容量增加 10%"
+      "攻擊建築時，每秒造成係數 1.8% 的額外傷害, 集結車冒險者容量增加 10%"
     ],
     "tags": ["VIP 10", "重課專屬"],
     "synergyPartners": [],
@@ -488,10 +488,10 @@
     "name": "妮維雅 Nivea",
     "faction": "熱情 Passion",
     "rarity": "SSR",
-    "tacticalRoles": ["突擊", "主攻手"],
+    "tacticalRoles": ["集結", "主攻手"],
     "skillEffects": [
       "每 10 秒釋放一次傷害係數為 1800% 的攻擊",
-      "冒險者容量增加 10%",
+      "集結車冒險者容量增加 10%",
       "對其他玩家傷害增加 20%"
     ],
     "tags": ["寒霜之地 S1", "S1 預熱"],
