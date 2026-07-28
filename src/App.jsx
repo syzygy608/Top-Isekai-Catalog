@@ -10,14 +10,14 @@ const FILTER_OPTIONS = {
     '普攻傷害減少', '技能傷害減少', '提升行車速度',
     '冒險者容量增加', '駐防建築/總部', '攻擊建築', '攻擊總部'
   ],
-  tags: ['新手適合', '低課適合', '重課專屬']
+  tags: ['新手適合', '低課適合', '重課專屬', '祈願']
 };
 
 const FILTER_LABELS = {
   factions: '所屬陣營',
   tacticalRoles: '戰術場景',
   skillEffects: '技能效果',
-  tags: '玩家評價'
+  tags: '標籤'
 };
 
 const RARITY_ACCENT = {
