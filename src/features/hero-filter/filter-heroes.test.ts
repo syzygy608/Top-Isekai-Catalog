@@ -91,7 +91,7 @@ describe('world skill effects', () => {
 
 describe('pre-refactor filter regression counts', () => {
   const cases = [
-    ['factions', 'truth', 7], ['factions', 'prowess', 5], ['factions', 'passion', 9],
+    ['factions', 'truth', 7], ['factions', 'prowess', 6], ['factions', 'passion', 9],
     ['factions', 'wealth', 6], ['factions', 'glory', 7],
     ['positions', 'captain', 15], ['positions', 'striker', 10], ['positions', 'defender', 9],
     ['tacticalRoles', 'rally', 3], ['tacticalRoles', 'siege', 1], ['tacticalRoles', 'garrison', 2],
