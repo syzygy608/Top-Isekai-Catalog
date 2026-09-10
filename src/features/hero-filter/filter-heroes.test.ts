@@ -101,7 +101,7 @@ describe('pre-refactor filter regression counts', () => {
     ['effectTypes', 'skillDamageDown', 6], ['effectTypes', 'marchSpeedUp', 3],
     ['effectTypes', 'soloCapacityUp', 6], ['effectTypes', 'rallyCapacityUp', 3],
     ['effectTypes', 'garrisonDamagePerSecond', 2], ['effectTypes', 'buildingDamagePerSecond', 1],
-    ['effectTypes', 'headquartersDamagePerSecond', 1],
+    ['effectTypes', 'headquartersDamagePerSecond', 2],
     ['tags', '新手適合', 7], ['tags', '低課適合', 5], ['tags', '重課專屬', 2], ['tags', '祈願', 9],
   ] as const;
 
