@@ -84,11 +84,11 @@ export const heroes = [
       },
       {
         "slot": 2,
-        "description": "攻擊總部時，每秒造成係數 1.2% 的額外傷害",
+        "description": "攻擊總部時，每秒造成係數 2% 的額外傷害",
         "effects": [
           {
             "type": "headquartersDamagePerSecond",
-            "value": 1.2,
+            "value": 2,
             "unit": "percent",
             "target": "總部",
             "condition": "攻擊時，每秒"
@@ -1769,6 +1769,62 @@ export const heroes = [
     "tags": [
       "寒霜之地 S1",
       "S1 預熱"
+    ],
+    "synergyPartnerIds": []
+  },
+  {
+    "id": "Verdict",
+    "name": "薇爾迪克 Verdict",
+    "faction": "prowess",
+    "rarity": "ssr",
+    "positions": [
+      "defender"
+    ],
+    "tacticalRoles": [
+      "assault"
+    ],
+    "worldSkills": [
+      {
+        "slot": 1,
+        "description": "每 10 秒釋放一次傷害係數為 1800% 的攻擊",
+        "effects": [
+          {
+            "type": "periodicDamage",
+            "value": 1800,
+            "unit": "percent",
+            "condition": "每 10 秒"
+          }
+        ]
+      },
+      {
+        "slot": 2,
+        "description": "攻擊總部時，每秒造成係數 2% 的額外傷害",
+        "effects": [
+          {
+            "type": "headquartersDamagePerSecond",
+            "value": 2,
+            "unit": "percent",
+            "target": "總部",
+            "condition": "攻擊時，每秒"
+          }
+        ]
+      },
+      {
+        "slot": 3,
+        "description": "單兵出擊冒險者容量增加 10%",
+        "effects": [
+          {
+            "type": "soloCapacityUp",
+            "value": 10,
+            "unit": "percent",
+            "target": "單兵出擊"
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "寒霜之地 S2",
+      "S2 商城"
     ],
     "synergyPartnerIds": []
   },

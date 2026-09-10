@@ -41,7 +41,7 @@ export default function App() {
         <h1 className="hero-dex__title">最強異世界 同伴圖鑑</h1>
         <p className="hero-dex__subtitle">
           依陣營、戰術定位與世界技能效果篩選你的最佳陣容，圖鑑已蒐集所有 SSR 以及特殊 SR 一位
-          （更新日期：2026/08/03）
+          （更新日期：2026/09/10）
         </p>
       </header>
 
