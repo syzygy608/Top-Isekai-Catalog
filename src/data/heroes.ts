@@ -1884,5 +1884,111 @@ export const heroes = [
       "黃金史萊姆王"
     ],
     "synergyPartnerIds": []
+  },
+  {
+    "id": "Maureen",
+    "name": "墨琳 Maureen",
+    "faction": "wealth",
+    "rarity": "ssr",
+    "positions": [
+      "striker"
+    ],
+    "tacticalRoles": [
+      "garrison"
+    ],
+    "worldSkills": [
+      {
+        "slot": 1,
+        "description": "每 10 秒釋放一次傷害係數為 1800% 的攻擊",
+        "effects": [
+          {
+            "type": "periodicDamage",
+            "value": 1800,
+            "unit": "percent",
+            "condition": "每 10 秒"
+          }
+        ]
+      },
+      {
+        "slot": 2,
+        "description": "駐防建築/總部時，每秒造成係數 2% 的額外傷害",
+        "effects": [
+          {
+            "type": "garrisonDamagePerSecond",
+            "value": 2,
+            "unit": "percent",
+            "condition": "每 1 秒"
+          }
+        ]
+      },
+      {
+        "slot": 3,
+        "description": "對世界守衛傷害增加 30%",
+        "effects": [
+          {
+            "type": "worldGuardianDamageUp",
+            "value": 30,
+            "unit": "percent"
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "寒霜之地 S2",
+      "S2 巨龍之寶"
+    ],
+    "synergyPartnerIds": []
+  },
+  {
+    "id": "Carmillian",
+    "name": "卡蜜莉安 Carmillian",
+    "faction": "truth",
+    "rarity": "ssr",
+    "positions": [
+      "defender"
+    ],
+    "tacticalRoles": [
+      "general"
+    ],
+    "worldSkills": [
+      {
+        "slot": 1,
+        "description": "每 10 秒釋放一次傷害係數為 1800% 的攻擊",
+        "effects": [
+          {
+            "type": "periodicDamage",
+            "value": 1800,
+            "unit": "percent"
+          }
+        ]
+      },
+      {
+        "slot": 2,
+        "description": "技能傷害增加 20%",
+        "effects": [
+          {
+            "type": "skillDamageUp",
+            "value": 20,
+            "unit": "percent"
+          }
+        ]
+      },
+      {
+        "slot": 3,
+        "description": "普攻傷害增加 50%",
+        "effects": [
+          {
+            "type": "normalAttackDamageUp",
+            "value": 50,
+            "unit": "percent"
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "寒霜之地 S2",
+      "S2 預熱"
+    ],
+    "synergyPartnerIds": []
   }
 ] satisfies Hero[];
