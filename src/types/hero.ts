@@ -52,6 +52,24 @@ export interface WorldSkill {
   effects: WorldSkillEffect[];
 }
 
+export interface SkillDefinition {
+  description: string;
+  effects: WorldSkillEffect[];
+}
+
+export interface HeroRecord {
+  id: string;
+  name: string;
+  faction: Faction;
+  rarity: Rarity;
+  positions: Position[];
+  tacticalRoles: TacticalRole[];
+  /** Skill IDs in slot order. Repeating an ID is valid. */
+  worldSkillIds: string[];
+  tags: string[];
+  synergyPartnerIds: string[];
+}
+
 export interface Hero {
   id: string;
   name: string;

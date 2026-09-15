@@ -1,4 +1,6 @@
-import { heroes } from '../src/data/heroes';
+import { heroRecords } from '../src/data/hero-records';
+import { resolveHeroes } from '../src/data/resolve-heroes';
+import { skillCatalog } from '../src/data/skill-catalog';
 import {
   EFFECT_TYPES,
   EFFECT_UNITS,
@@ -127,11 +129,76 @@ export function validateHeroes(input: readonly unknown[]): string[] {
   return errors;
 }
 
+export function validateStoredData(
+  records: readonly unknown[],
+  catalog: Readonly<Record<string, unknown>>,
+): string[] {
+  const errors: string[] = [];
+  const ids = new Set<string>();
+  const effectCodes = new Set<string>(EFFECT_TYPES);
+  const unitCodes = new Set<string>(EFFECT_UNITS);
+
+  for (const [skillId, value] of Object.entries(catalog)) {
+    if (!skillId.trim()) errors.push('world skill catalog has an empty id');
+    if (!isRecord(value) || !hasString(value.description) || !Array.isArray(value.effects)) {
+      errors.push(`${skillId} has invalid skill definition`);
+      continue;
+    }
+    for (const effect of value.effects) {
+      if (!isRecord(effect) || !hasString(effect.type) || !effectCodes.has(effect.type)) {
+        errors.push(`${skillId} has invalid effect type ${isRecord(effect) ? String(effect.type) : String(effect)}`);
+        continue;
+      }
+      if (effect.value !== undefined && (typeof effect.value !== 'number' || !Number.isFinite(effect.value))) {
+        errors.push(`${skillId} has invalid effect value`);
+      }
+      if (effect.unit !== undefined && (typeof effect.unit !== 'string' || !unitCodes.has(effect.unit))) {
+        errors.push(`${skillId} has invalid effect unit ${String(effect.unit)}`);
+      }
+    }
+  }
+
+  for (const [index, value] of records.entries()) {
+    if (!isRecord(value)) {
+      errors.push(`hero ${index} must be an object`);
+      continue;
+    }
+    const id = hasString(value.id) ? value.id : `hero ${index}`;
+    if (!hasString(value.id)) errors.push(`${id} has an empty id`);
+    else if (ids.has(id)) errors.push(`${id} has a duplicate hero id`);
+    ids.add(id);
+    if (!hasString(value.name)) errors.push(`${id} has an empty name`);
+    if (typeof value.faction !== 'string' || !new Set<string>(FACTIONS).has(value.faction)) errors.push(`${id} has invalid faction`);
+    if (typeof value.rarity !== 'string' || !new Set<string>(RARITIES).has(value.rarity)) errors.push(`${id} has invalid rarity`);
+    validateCodeArray(value.positions, POSITIONS, `${id}.positions`, errors);
+    validateCodeArray(value.tacticalRoles, TACTICAL_ROLES, `${id}.tacticalRoles`, errors);
+    if (!Array.isArray(value.worldSkillIds) || value.worldSkillIds.length !== 3) {
+      errors.push(`${id} must contain exactly three world skill IDs`);
+    } else for (const [slot, skillId] of value.worldSkillIds.entries()) {
+      if (!hasString(skillId) || !Object.hasOwn(catalog, skillId)) errors.push(`${id} slot ${slot + 1} references missing world skill ${String(skillId)}`);
+    }
+    if (!Array.isArray(value.tags) || value.tags.some((tag) => !hasString(tag))) errors.push(`${id} has invalid tags`);
+    if (!Array.isArray(value.synergyPartnerIds)) errors.push(`${id} synergyPartnerIds must be an array`);
+  }
+  for (const value of records) {
+    if (!isRecord(value) || !Array.isArray(value.synergyPartnerIds)) continue;
+    const id = String(value.id);
+    for (const partnerId of value.synergyPartnerIds) {
+      if (!hasString(partnerId) || !ids.has(partnerId)) errors.push(`${id} references missing synergy partner ${String(partnerId)}`);
+      else if (partnerId === id) errors.push(`${id} cannot be its own synergy partner`);
+    }
+  }
+  return errors;
+}
+
 if (import.meta.main) {
-  const errors = validateHeroes(heroes);
+  const storedErrors = validateStoredData(heroRecords, skillCatalog);
+  const errors = storedErrors.length > 0
+    ? storedErrors
+    : validateHeroes(resolveHeroes(heroRecords, skillCatalog));
   if (errors.length > 0) {
     console.error(errors.join('\n'));
     process.exit(1);
   }
-  console.log(`Validated ${heroes.length} heroes successfully.`);
+  console.log(`Validated ${heroRecords.length} heroes and ${Object.keys(skillCatalog).length} world skill definitions successfully.`);
 }

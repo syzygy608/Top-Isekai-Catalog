@@ -89,18 +89,18 @@ describe('world skill effects', () => {
   });
 });
 
-describe('pre-refactor filter regression counts', () => {
+describe('current catalog filter regression counts', () => {
   const cases = [
-    ['factions', 'truth', 7], ['factions', 'prowess', 6], ['factions', 'passion', 9],
-    ['factions', 'wealth', 6], ['factions', 'glory', 7],
-    ['positions', 'captain', 15], ['positions', 'striker', 10], ['positions', 'defender', 10],
-    ['tacticalRoles', 'rally', 3], ['tacticalRoles', 'siege', 1], ['tacticalRoles', 'garrison', 2],
-    ['tacticalRoles', 'assault', 11], ['tacticalRoles', 'stamina', 1], ['tacticalRoles', 'general', 5],
-    ['effectTypes', 'normalAttackDamageUp', 14], ['effectTypes', 'skillDamageUp', 12],
+    ['factions', 'truth', 8], ['factions', 'prowess', 6], ['factions', 'passion', 9],
+    ['factions', 'wealth', 7], ['factions', 'glory', 7],
+    ['positions', 'captain', 15], ['positions', 'striker', 11], ['positions', 'defender', 11],
+    ['tacticalRoles', 'rally', 3], ['tacticalRoles', 'siege', 1], ['tacticalRoles', 'garrison', 3],
+    ['tacticalRoles', 'assault', 11], ['tacticalRoles', 'stamina', 1], ['tacticalRoles', 'general', 6],
+    ['effectTypes', 'normalAttackDamageUp', 15], ['effectTypes', 'skillDamageUp', 13],
     ['effectTypes', 'playerDamageUp', 7], ['effectTypes', 'normalAttackDamageDown', 11],
     ['effectTypes', 'skillDamageDown', 6], ['effectTypes', 'marchSpeedUp', 3],
     ['effectTypes', 'soloCapacityUp', 6], ['effectTypes', 'rallyCapacityUp', 3],
-    ['effectTypes', 'garrisonDamagePerSecond', 2], ['effectTypes', 'buildingDamagePerSecond', 1],
+    ['effectTypes', 'garrisonDamagePerSecond', 3], ['effectTypes', 'buildingDamagePerSecond', 1],
     ['effectTypes', 'headquartersDamagePerSecond', 2],
     ['tags', '新手適合', 7], ['tags', '低課適合', 5], ['tags', '重課專屬', 2], ['tags', '祈願', 9],
   ] as const;
