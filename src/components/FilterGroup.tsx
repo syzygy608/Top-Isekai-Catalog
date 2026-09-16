@@ -18,8 +18,8 @@ function FilterGroupComponent<K extends FilterGroupKey>({
   onToggle,
 }: FilterGroupProps<K>) {
   return (
-    <fieldset className="filter-row">
-      <legend className="filter-row__label">{label}</legend>
+    <div className="filter-row" role="group" aria-label={label}>
+      <span className="filter-row__label" aria-hidden="true">{label}</span>
       <div className="filter-row__options">
         {options.map((option) => {
           const isActive = (currentState as string[]).includes(option.value);
@@ -36,7 +36,7 @@ function FilterGroupComponent<K extends FilterGroupKey>({
           );
         })}
       </div>
-    </fieldset>
+    </div>
   );
 }
 
