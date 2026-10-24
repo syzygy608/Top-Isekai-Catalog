@@ -797,5 +797,27 @@ export const heroRecords = [
       "s09",
       "s08"
     ]
+  },
+  {
+    "id": "\"Yaku sakura\"",
+    "name": "夜久樱 Yaku sakura",
+    "faction": "prowess",
+    "rarity": "ssr",
+    "positions": [
+      "captain"
+    ],
+    "tacticalRoles": [
+      "rally"
+    ],
+    "worldSkillIds": [
+      "s01",
+      "s02",
+      "s08"
+    ],
+    "tags": [
+      "失落之城 S3",
+      "S3預熱"
+    ],
+    "synergyPartnerIds": []
   }
 ] satisfies HeroRecord[];
