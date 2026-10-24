@@ -17,6 +17,9 @@ export const TACTICAL_ROLES = [
 ] as const;
 export type TacticalRole = (typeof TACTICAL_ROLES)[number];
 
+export const HERO_ORIGINS = ['frozen', 'lostCity', 'original'] as const;
+export type HeroOrigin = (typeof HERO_ORIGINS)[number];
+
 export const EFFECT_TYPES = [
   'periodicDamage',
   'normalAttackDamageUp',
@@ -84,6 +87,7 @@ export interface Hero {
 
 export interface HeroFilters {
   factions: Faction[];
+  origins: HeroOrigin[];
   positions: Position[];
   tacticalRoles: TacticalRole[];
   effectTypes: EffectType[];

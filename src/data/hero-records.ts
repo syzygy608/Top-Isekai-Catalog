@@ -127,7 +127,7 @@ export const heroRecords = [
       "general"
     ],
     "tags": [
-      "寒霜之地 S1",
+      "冰封王庭 S1",
       "S1 商店"
     ],
     "synergyPartnerIds": [],
@@ -149,7 +149,7 @@ export const heroRecords = [
       "assault"
     ],
     "tags": [
-      "寒霜之地 S1",
+      "冰封王庭 S1",
       "失落之城 S1",
       "失落之城 S2",
       "跨服拍賣會"
@@ -216,7 +216,7 @@ export const heroRecords = [
       "assault"
     ],
     "tags": [
-      "寒霜之地 S1",
+      "冰封王庭 S1",
       "S1 巨龍之寶"
     ],
     "synergyPartnerIds": [],
@@ -389,7 +389,7 @@ export const heroRecords = [
     ],
     "tacticalRoles": [],
     "tags": [
-      "寒霜之地 S1",
+      "冰封王庭 S1",
       "S1 電影大亨"
     ],
     "synergyPartnerIds": [],
@@ -488,7 +488,7 @@ export const heroRecords = [
     ],
     "tacticalRoles": [],
     "tags": [
-      "寒霜之地 S1",
+      "冰封王庭 S1",
       "S1 電影大亨"
     ],
     "synergyPartnerIds": [],
@@ -701,7 +701,7 @@ export const heroRecords = [
       "rally"
     ],
     "tags": [
-      "寒霜之地 S1",
+      "冰封王庭 S1",
       "S1 預熱"
     ],
     "synergyPartnerIds": [],
@@ -723,7 +723,7 @@ export const heroRecords = [
       "assault"
     ],
     "tags": [
-      "寒霜之地 S2",
+      "冰封王庭 S2",
       "S2 商城"
     ],
     "synergyPartnerIds": [],
@@ -766,7 +766,7 @@ export const heroRecords = [
       "garrison"
     ],
     "tags": [
-      "寒霜之地 S2",
+      "冰封王庭 S2",
       "S2 巨龍之寶"
     ],
     "synergyPartnerIds": [],
@@ -788,7 +788,7 @@ export const heroRecords = [
       "general"
     ],
     "tags": [
-      "寒霜之地 S2",
+      "冰封王庭 S2",
       "S2 預熱"
     ],
     "synergyPartnerIds": [],
@@ -799,7 +799,7 @@ export const heroRecords = [
     ]
   },
   {
-    "id": "\"Yaku sakura\"",
+    "id": "Yaku sakura",
     "name": "夜久樱 Yaku sakura",
     "faction": "prowess",
     "rarity": "ssr",

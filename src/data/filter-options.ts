@@ -22,6 +22,15 @@ export const FILTER_GROUPS = [
     })),
   },
   {
+    key: 'origins',
+    label: '角色來源',
+    options: [
+      { value: 'frozen', label: '冰封王庭' },
+      { value: 'lostCity', label: '失落之城' },
+      { value: 'original', label: '其他原位面角色' },
+    ],
+  },
+  {
     key: 'positions',
     label: '定位',
     options: (['captain', 'striker', 'defender'] as const).map((value) => ({

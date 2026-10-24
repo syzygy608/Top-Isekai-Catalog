@@ -1,7 +1,13 @@
 import { describe, expect, test } from 'bun:test';
 import { heroes } from '../../data/heroes';
 import type { Hero, WorldSkill } from '../../types/hero';
-import { createEmptyFilters, filterHeroes, heroHasEffect, summarizeEffects } from './filter-heroes';
+import {
+  createEmptyFilters,
+  filterHeroes,
+  heroHasEffect,
+  heroMatchesOrigin,
+  summarizeEffects,
+} from './filter-heroes';
 
 function createHero(overrides: Partial<Hero> = {}): Hero {
   return {
@@ -89,10 +95,29 @@ describe('world skill effects', () => {
   });
 });
 
+describe('hero origins', () => {
+  test('matches heroes tagged for both special worlds in either category', () => {
+    const hero = createHero({ tags: ['冰封王庭 S1', '失落之城 S2'] });
+
+    expect(heroMatchesOrigin(hero, 'frozen')).toBe(true);
+    expect(heroMatchesOrigin(hero, 'lostCity')).toBe(true);
+    expect(heroMatchesOrigin(hero, 'original')).toBe(false);
+  });
+
+  test('treats heroes without a special-world tag as original-world heroes', () => {
+    const hero = createHero({ tags: ['祈願', '新手適合'] });
+
+    expect(heroMatchesOrigin(hero, 'original')).toBe(true);
+    expect(heroMatchesOrigin(hero, 'frozen')).toBe(false);
+    expect(heroMatchesOrigin(hero, 'lostCity')).toBe(false);
+  });
+});
+
 describe('current catalog filter regression counts', () => {
   const cases = [
     ['factions', 'truth', 8], ['factions', 'prowess', 7], ['factions', 'passion', 9],
     ['factions', 'wealth', 7], ['factions', 'glory', 7],
+    ['origins', 'frozen', 9], ['origins', 'lostCity', 10], ['origins', 'original', 20],
     ['positions', 'captain', 16], ['positions', 'striker', 11], ['positions', 'defender', 11],
     ['tacticalRoles', 'rally', 4], ['tacticalRoles', 'siege', 1], ['tacticalRoles', 'garrison', 3],
     ['tacticalRoles', 'assault', 11], ['tacticalRoles', 'stamina', 1], ['tacticalRoles', 'general', 6],

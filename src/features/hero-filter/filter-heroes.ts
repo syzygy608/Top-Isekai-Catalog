@@ -1,13 +1,23 @@
-import type { EffectType, Hero, HeroFilters, WorldSkillEffect } from '../../types/hero';
+import type { EffectType, Hero, HeroFilters, HeroOrigin, WorldSkillEffect } from '../../types/hero';
 
 export function createEmptyFilters(): HeroFilters {
   return {
     factions: [],
+    origins: [],
     positions: [],
     tacticalRoles: [],
     effectTypes: [],
     tags: [],
   };
+}
+
+export function heroMatchesOrigin(hero: Hero, origin: HeroOrigin): boolean {
+  const isFrost = hero.tags.some((tag) => tag.startsWith('冰封王庭'));
+  const isLostCity = hero.tags.some((tag) => tag.startsWith('失落之城'));
+
+  if (origin === 'frozen') return isFrost;
+  if (origin === 'lostCity') return isLostCity;
+  return !isFrost && !isLostCity;
 }
 
 export function heroHasEffect(hero: Hero, effectType: EffectType): boolean {
@@ -19,6 +29,8 @@ export function heroHasEffect(hero: Hero, effectType: EffectType): boolean {
 export function filterHeroes(heroes: readonly Hero[], filters: HeroFilters): Hero[] {
   return heroes.filter((hero) => {
     const matchFaction = filters.factions.length === 0 || filters.factions.includes(hero.faction);
+    const matchOrigin = filters.origins.length === 0 ||
+      filters.origins.some((origin) => heroMatchesOrigin(hero, origin));
     const matchPosition = filters.positions.length === 0 ||
       filters.positions.some((position) => hero.positions.includes(position));
     const matchTacticalRole = filters.tacticalRoles.length === 0 ||
@@ -28,7 +40,7 @@ export function filterHeroes(heroes: readonly Hero[], filters: HeroFilters): Her
     const matchTag = filters.tags.length === 0 ||
       filters.tags.some((tag) => hero.tags.includes(tag));
 
-    return matchFaction && matchPosition && matchTacticalRole && matchEffect && matchTag;
+    return matchFaction && matchOrigin && matchPosition && matchTacticalRole && matchEffect && matchTag;
   });
 }
 
