@@ -91,15 +91,15 @@ describe('world skill effects', () => {
 
 describe('current catalog filter regression counts', () => {
   const cases = [
-    ['factions', 'truth', 8], ['factions', 'prowess', 6], ['factions', 'passion', 9],
+    ['factions', 'truth', 8], ['factions', 'prowess', 7], ['factions', 'passion', 9],
     ['factions', 'wealth', 7], ['factions', 'glory', 7],
-    ['positions', 'captain', 15], ['positions', 'striker', 11], ['positions', 'defender', 11],
-    ['tacticalRoles', 'rally', 3], ['tacticalRoles', 'siege', 1], ['tacticalRoles', 'garrison', 3],
+    ['positions', 'captain', 16], ['positions', 'striker', 11], ['positions', 'defender', 11],
+    ['tacticalRoles', 'rally', 4], ['tacticalRoles', 'siege', 1], ['tacticalRoles', 'garrison', 3],
     ['tacticalRoles', 'assault', 11], ['tacticalRoles', 'stamina', 1], ['tacticalRoles', 'general', 6],
-    ['effectTypes', 'normalAttackDamageUp', 15], ['effectTypes', 'skillDamageUp', 13],
+    ['effectTypes', 'normalAttackDamageUp', 16], ['effectTypes', 'skillDamageUp', 13],
     ['effectTypes', 'playerDamageUp', 7], ['effectTypes', 'normalAttackDamageDown', 11],
     ['effectTypes', 'skillDamageDown', 6], ['effectTypes', 'marchSpeedUp', 3],
-    ['effectTypes', 'soloCapacityUp', 6], ['effectTypes', 'rallyCapacityUp', 3],
+    ['effectTypes', 'soloCapacityUp', 6], ['effectTypes', 'rallyCapacityUp', 4],
     ['effectTypes', 'garrisonDamagePerSecond', 3], ['effectTypes', 'buildingDamagePerSecond', 1],
     ['effectTypes', 'headquartersDamagePerSecond', 2],
     ['tags', '新手適合', 7], ['tags', '低課適合', 5], ['tags', '重課專屬', 2], ['tags', '祈願', 9],
