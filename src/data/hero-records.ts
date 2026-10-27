@@ -600,7 +600,8 @@ export const heroRecords = [
     "tacticalRoles": [],
     "tags": [
       "失落之城 S2",
-      "S2 商店"
+      "S2 商店",
+      "S2 祈願神殿"
     ],
     "synergyPartnerIds": [],
     "worldSkillIds": [

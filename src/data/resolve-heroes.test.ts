@@ -4,10 +4,10 @@ import { heroes } from './heroes';
 import { resolveHeroes } from './resolve-heroes';
 import { skillCatalog } from './skill-catalog';
 
-test('expanded heroes preserve 37 records and all 111 skill slots', () => {
-  expect(heroRecords).toHaveLength(38);
+test('expanded heroes preserve 40 records and all 120 skill slots', () => {
+  expect(heroRecords).toHaveLength(40);
   expect(Object.keys(skillCatalog)).toHaveLength(21);
-  expect(heroes.flatMap((hero) => hero.worldSkills)).toHaveLength(114);
+  expect(heroes.flatMap((hero) => hero.worldSkills)).toHaveLength(120);
   expect(heroes.every((hero) => hero.worldSkills.map((skill) => skill.slot).join(',') === '1,2,3')).toBe(true);
 });
 
