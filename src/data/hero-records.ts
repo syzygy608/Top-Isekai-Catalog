@@ -38,7 +38,7 @@ export const heroRecords = [
     ],
     "tags": [
       "最強轉生者",
-      "絕版"
+      "祈願神殿"
     ],
     "synergyPartnerIds": [],
     "worldSkillIds": [
@@ -559,7 +559,9 @@ export const heroRecords = [
     ],
     "tags": [
       "失落之城 S1",
-      "S1 商店"
+      "S1 商店",
+      "失落之城 S3",
+      "S3 商店",
     ],
     "synergyPartnerIds": [],
     "worldSkillIds": [
@@ -816,7 +818,49 @@ export const heroRecords = [
     ],
     "tags": [
       "失落之城 S3",
-      "S3預熱"
+      "S3 預熱"
+    ],
+    "synergyPartnerIds": []
+  },
+  {
+    "id": "Clow",
+    "name": "克勞 Clow",
+    "faction": "glory",
+    "rarity": "ssr",
+    "positions": [
+      "defender"
+    ],
+    "tacticalRoles": [],
+    "worldSkillIds": [
+      "s01",
+      "s05",
+      "s10"
+    ],
+    "tags": [
+      "失落之城 S3",
+      "S3 商店"
+    ],
+    "synergyPartnerIds": []
+  },
+  {
+    "id": "Eve",
+    "name": "伊芙 Eve",
+    "faction": "prowess",
+    "rarity": "ssr",
+    "positions": [
+      "striker"
+    ],
+    "tacticalRoles": [
+      "assault"
+    ],
+    "worldSkillIds": [
+      "s01",
+      "s08",
+      "s04"
+    ],
+    "tags": [
+      "失落之城 S3",
+      "S3 巨龍之寶"
     ],
     "synergyPartnerIds": []
   }
